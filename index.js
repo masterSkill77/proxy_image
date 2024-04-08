@@ -6,6 +6,8 @@ config();
 
 const app = express();
 
+app.get('/', (req, res) => res.json('It works'));
+
 app.use('/image/:imageName', async (req, res) => {
 	try {
 		const { imageName } = req.params;
