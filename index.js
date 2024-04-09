@@ -11,8 +11,7 @@ app.get('/', (req, res) => res.json('It works'));
 app.use('/image/:imageName', async (req, res) => {
 	try {
 		const { imageName } = req.params;
-		const imageUrl =
-			process.env.MAIN_SERVER + `/document/photos_couvert/${imageName}`;
+		const imageUrl = process.env.MAIN_SERVER + `/document/${imageName}`;
 		const response = await fetch(imageUrl);
 		const arrayBuffer = await response.arrayBuffer();
 		const buffer = Buffer.from(arrayBuffer);
